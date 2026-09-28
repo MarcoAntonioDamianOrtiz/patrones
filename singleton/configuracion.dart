@@ -1,5 +1,12 @@
+// constructor con singleton
 class Configuracion {
-  String idioma;
+  // constructor privado
+  Configuracion._(); 
+  static final Configuracion _instancia = Configuracion._();
+  // un constructor de configuaracion no tiene que crear una nueva instancia 
+  factory Configuracion() => _instancia;
 
-  Configuracion(this.idioma);
+
+  String idioma = 'es';
+
 }
