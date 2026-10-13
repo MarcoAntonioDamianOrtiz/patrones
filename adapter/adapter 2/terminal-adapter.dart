@@ -1,0 +1,14 @@
+import 'medio-pago.dart';
+import 'terminal.externa.dart';
+
+class TerminalAdapter implements Mediopago {
+  final TerminalExterna terminal;
+
+  TerminalAdapter(this.terminal);
+
+  @override
+  void pagar(double pesos) {
+    final totalDolares = pesos / 18.25;
+    terminal.Cobrar(totalDolares);
+  }
+}
