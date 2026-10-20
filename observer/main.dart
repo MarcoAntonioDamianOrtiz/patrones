@@ -1,4 +1,5 @@
 import 'agenda.dart';
+import 'historial.dart';
 import 'notificador.dart';
 import 'panel-alumno.dart';
 
@@ -9,6 +10,7 @@ void main() {
 
   agenda.suscribir(panel);
   agenda.suscribir(notificador);
+  agenda.suscribir(historial);
 
   agenda.publicarTarea("Estudiar patrones de disenio");
 
