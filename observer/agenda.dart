@@ -1,18 +1,23 @@
 // Agenda SIN Observer
-
 import 'notificador.dart';
+import 'observador.dart';
 import 'panel-alumno.dart';
-
+//sujeto observado
 class Agenda {
-  final PanelAlumno panelAlumno = PanelAlumno();
-  final Notificador notificador = Notificador();
-
-  void publicarTarea(String tarea) {
-    print("Publicando tarea: $tarea");
-    panelAlumno.mostrar(tarea);
-    notificador.notificar(tarea);
+  final List<Observador> _observadores = [];
+  void suscribir(Observador observador) {
+    _observadores.add(observador);
   }
-
-  // Sin observer, la agenda termina de encargarse de todo:
-  // Publicar las tarea, coordinar componentes de otro tipo, etc.
+  void desuscribir(Observador observador) {
+    _observadores.remove(observador);
+  }
+  void publicarTarea(String tarea) {
+    print("Publicando tarea: $tarea"); 
+    for ( final observador in _observadores) {
+      observador.actualizar(tarea);
+    }
+  }
+  // con observer, la agenda solo conoce el contrato obervador
+  // las clases destinatarias se suscriben o se desuscriben de la agenda
+  //  Agrega z otra clase destinataria solo implica crear la clase
 }
