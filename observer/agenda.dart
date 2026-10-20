@@ -1,7 +1,5 @@
 // Agenda SIN Observer
-import 'notificador.dart';
 import 'observador.dart';
-import 'panel-alumno.dart';
 //sujeto observado
 class Agenda {
   final List<Observador> _observadores = [];
