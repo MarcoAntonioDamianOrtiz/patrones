@@ -16,5 +16,4 @@ void main() {
 
   agenda.desuscribir(notificador);
   agenda.publicarTarea("Estudiar patrones de disenio 2");
-
 }
