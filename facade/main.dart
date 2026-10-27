@@ -1,20 +1,26 @@
-import 'proyector.dart';
 import 'reproductor.dart';
+import 'proyector.dart' show Proyector;
 import 'sistema-audio.dart';
 
-void main() {
-  final proyector = Proyector();
-  final audio = SistemAudio();
-  final reproductor = Reproductor();
+class CineFacade {
+  final Proyector _proyector;
+  final SistemaAudio _audio;
+  final Reproductor _reproductor;
 
-  // Encender el proyector y el sistema de audio
-  proyector.encender();
-  audio.encender();
-  audio.ajustarVolumen(25);
-  reproductor.reproducir('volver al futuro 2');
+  //constructor
+  CineFacade(this._proyector, this._audio, this._reproductor);
 
-  // Detener la reproducción y apagar el proyector y el sistema de audio
-  reproductor.detener();
-  audio.apagar();
-  proyector.apagar();
+  void verPelicula(String pelicula, int volumen) {
+    _proyector.encender();
+    _audio.encender();
+    _audio.ajustarVolumen(volumen);
+    _reproductor.reproducir(pelicula);
+  }
+
+  void terminarFuncion() {
+    _reproductor.detener();
+    _audio.apagar();
+    _proyector.apagar();
+  }
 }
+ /// vete a la verga marco puto 
