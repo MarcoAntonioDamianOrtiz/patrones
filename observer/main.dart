@@ -1,5 +1,4 @@
 import 'agenda.dart';
-import 'historial.dart';
 import 'notificador.dart';
 import 'panel-alumno.dart';
 
@@ -10,10 +9,9 @@ void main() {
 
   agenda.suscribir(panel);
   agenda.suscribir(notificador);
-  agenda.suscribir(historial);
+
+  // En un punto, el usuario desactiva las notificaciones
+  agenda.desuscribir(notificador);
 
   agenda.publicarTarea("Estudiar patrones de disenio");
-
-  agenda.desuscribir(notificador);
-  agenda.publicarTarea("Estudiar patrones de disenio 2");
 }
