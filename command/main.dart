@@ -1,7 +1,7 @@
 import 'agenda.dart';
 
 void main(){
-  final agenda = Agenda();
+  final agenda = Agenda(); // Crear una instancia de la clase Agenda
   print('Las tareas pendientes son: ${agenda.tareas}');
 
   agenda.eliminar(2);

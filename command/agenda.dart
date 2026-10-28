@@ -6,8 +6,8 @@ class Agenda {
     'Aprender un nuevo lenguaje de programación',
   ];
 
-  String? eliminada;
-  int? posicionAnterior;
+  String? eliminada; // variable que almacenará la tarea eliminada
+  int? posicionAnterior; // esta variable almacenará la posición de la tarea eliminada
 
   void eliminar(int posicion) {
     eliminada = tareas.removeAt(posicion);
